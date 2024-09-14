@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScribGen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <!-- <nav class="navbar">
+        <div class="navbar-logo">GitHub</div>
+        <ul class="navbar-menu">
+            <li><a href="#">Pull Requests</a></li>
+            <li><a href="#">Issues</a></li>
+            <li><a href="#">Marketplace</a></li>
+            <li><a href="#">Explore</a></li>
+        </ul>
+    </nav> -->
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1>ScribGen: Generating Scribble Art Through Meta-heuristics</h1>
+        <h3>Soumyartna Debnath*, Ashish Tiwari, Shanmuganathan Raman</h3>
+        <h2 style="margin-top: 20px;">Accepted in SIGRAPH ASIA 2025 - Long Art Paper Track</h2>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <section>
+            <h2>Abstract</h2>
+            <p>
+                Scribble art, arising from chaos and randomness, remains one of the exceptionally attractive forms of art. Many works bridge the gap between sketches and images, but few translate images into meaningful chaotic expressions. While deep generative networks are known for understanding images, their ability to mimic human scribbled drawings is under-explored. Unlike GAN-based approaches that generate line drawings, sketches, and contours, our work uses meta-heuristics to generate scribble art from images. We extensively analyze various meta-heuristic algorithms, demonstrating their optimal balance between creativity and computational efficiency. They offer better adaptability and accuracy than state-of-the-art deep generative models for image-to-sketch generation.
+            </p>
+        </section>
+        
+        <section>
+            <h2>ScribGen in Action</h2>
+            <div class="container">
+                <div class="row"  style="padding-top: 10px; position: sticky; top: 0px; background-color: rgb(255, 255, 255); z-index: 1000; height: 60px;">
+                    <!-- <div class="col-md-8"></div> -->
+                    <div class="col-md-4 generationLabel">
+                        Use the Slider to Interact 
+                    </div>
+                    <div class="col-md-5 generationLabel">
+                        <input type="range" id="imageSlider" min="1" max="40" value="40" oninput="updateImages(this.value)" style="width: 100%;">
+                    </div>
+                    <div class="col-md-3 generationLabel">
+                        <label for="imageSlider">Generation : <b><span id="imageSliderValue">2000</span></b></label>
+                    </div>
+                </div>
+
+                <div class="row" style="position: sticky; top: 60px; background-color: rgba(255, 255, 255, 0); z-index: 1000;">
+                    <div class="col-md-2 rowHeadding">Image</div>
+                    <div class="col-md-2 rowHeadding">Scrib-GA</div>
+                    <div class="col-md-2 rowHeadding">Scrib-DE</div>
+                    <div class="col-md-2 rowHeadding">Scrib-GSA</div>
+                    <div class="col-md-2 rowHeadding">Scrib-PSO</div>
+                    <div class="col-md-2 rowHeadding">Scrib-HHO</div>
+                </div>
+                
+                <!-- Panda -->
+                <div class="row">
+                    <div class="col-md-2 scribImgCol">
+                        <img id="1image1" src="GIF_Database/Panda/image.jpg" alt="Image" width="100%" class="realImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="1image2" src="GIF_Database/Panda/GA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="1image3" src="GIF_Database/Panda/DE_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="1image4" src="GIF_Database/Panda/GSA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="1image5" src="GIF_Database/Panda/PSO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="1image6" src="GIF_Database/Panda/HHO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                </div>
+
+                <!-- Bird -->
+                <div class="row">
+                    <div class="col-md-2 scribImgCol">
+                        <img id="2image1" src="GIF_Database/Bird/image.png" alt="Image" width="100%" class="realImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="2image2" src="GIF_Database/Bird/GA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="2image3" src="GIF_Database/Bird/DE_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="2image4" src="GIF_Database/Bird/GSA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="2image5" src="GIF_Database/Bird/PSO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="2image6" src="GIF_Database/Bird/HHO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                </div>
+
+                <!-- hand -->
+                <div class="row">
+                    <div class="col-md-2 scribImgCol">
+                        <img id="3image1" src="GIF_Database/hand/image.png" alt="Image" width="100%" class="realImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="3image2" src="GIF_Database/hand/GA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="3image3" src="GIF_Database/hand/DE_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="3image4" src="GIF_Database/hand/GSA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="3image5" src="GIF_Database/hand/PSO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="3image6" src="GIF_Database/hand/HHO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                </div>
+
+                <!-- horse -->
+                <div class="row">
+                    <div class="col-md-2 scribImgCol">
+                        <img id="4image1" src="GIF_Database/horse/image.png" alt="Image" width="100%" class="realImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="4image2" src="GIF_Database/horse/GA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="4image3" src="GIF_Database/horse/DE_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="4image4" src="GIF_Database/horse/GSA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="4image5" src="GIF_Database/horse/PSO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="4image6" src="GIF_Database/horse/HHO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                </div>
+
+                <!-- hut -->
+                <div class="row">
+                    <div class="col-md-2 scribImgCol">
+                        <img id="5image1" src="GIF_Database/hut/image.png" alt="Image" width="100%" class="realImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="5image2" src="GIF_Database/hut/GA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="5image3" src="GIF_Database/hut/DE_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="5image4" src="GIF_Database/hut/GSA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="5image5" src="GIF_Database/hut/PSO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="5image6" src="GIF_Database/hut/HHO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                </div>
+
+                <!-- rose -->
+                <div class="row">
+                    <div class="col-md-2 scribImgCol">
+                        <img id="6image1" src="GIF_Database/rose/image.png" alt="Image" width="100%" class="realImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="6image2" src="GIF_Database/rose/GA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="6image3" src="GIF_Database/rose/DE_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="6image4" src="GIF_Database/rose/GSA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="6image5" src="GIF_Database/rose/PSO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="6image6" src="GIF_Database/rose/HHO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                </div>
+
+                <!-- Landscape -->
+                <div class="row">
+                    <div class="col-md-2 scribImgCol">
+                        <img id="7image1" src="GIF_Database/Landscape/image.png" alt="Image" width="100%" class="realImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="7image2" src="GIF_Database/Landscape/GA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="7image3" src="GIF_Database/Landscape/DE_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="7image4" src="GIF_Database/Landscape/GSA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="7image5" src="GIF_Database/Landscape/PSO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="7image6" src="GIF_Database/Landscape/HHO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                </div>
+
+                <!-- statue -->
+                <div class="row">
+                    <div class="col-md-2 scribImgCol">
+                        <img id="8image1" src="GIF_Database/statue/image.png" alt="Image" width="100%" class="realImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="8image2" src="GIF_Database/statue/GA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="8image3" src="GIF_Database/statue/DE_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="8image4" src="GIF_Database/statue/GSA_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="8image5" src="GIF_Database/statue/PSO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                    <div class="col-md-2 scribImgCol">
+                        <img id="8image6" src="GIF_Database/statue/HHO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                </div>
+
+            </div>
+            
+        </section>
+        
+        <script>
+            
+        </script>
+        
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        &copy; 2024 Soumyaratna Debnath, CVIG Lab, Indian Institute of Technology Gandhinagar
+    </footer>
+
+    <!-- JavaScript -->
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>

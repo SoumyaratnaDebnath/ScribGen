@@ -1,0 +1,127 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and container styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f8fa;
+    color: #333;
+}
+
+/* Navbar styles */
+/* .navbar {
+    background-color: #24292e;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+} */
+
+/* Header styles */
+.header {
+    background-color: #0366d6;
+    color: #ffffff;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+}
+
+/* Main content styles */
+.content {
+    padding: 20px;
+}
+
+.content section {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    color: #757575;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.content h2 {
+    margin-bottom: 10px;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #0366d6;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #24292e;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Custom */
+p {
+    text-align: justify;
+}
+.scribImg {
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 20px;
+}
+.scribImgCol{
+    padding:1px;
+}
+.rowHeadding{
+    padding: 2px; 
+    color:#ffffff;
+    text-align: center;
+    /* font-family: serif; */
+    font-weight: bold;
+    background-color: #00152d;
+    border: 2px solid white;
+    margin-bottom: 5px;
+    border-radius: 50px;
+}
+.generationLabel{
+    display: flex; 
+    justify-content: center;
+    /* font-family: serif; */
+    color: #0366d6;
+    align-items: center;
+}
+.realImg{
+    border-radius: 20px;
+}
