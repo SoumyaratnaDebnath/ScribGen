@@ -48,3 +48,28 @@ function updateImages(value) {
     document.getElementById('8image5').src = `GIF_Database/statue/PSO_images/img (${value}).png`;
     document.getElementById('8image6').src = `GIF_Database/statue/HHO_images/img (${value}).png`;
 }
+
+// run after the page is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('placeHolder').style.height = document.getElementById('teaserImage').clientHeight + 'px';
+
+    // window.addEventListener('scroll', function() {
+    //     var scrollPosition = window.scrollY;
+    //     var opacity = 1 - scrollPosition / 500;
+    //     document.getElementById('teaserImage').style.opacity = opacity;
+    // });
+
+    window.addEventListener('scroll', function() {
+        var scrollPosition = window.scrollY;
+        var tiltX = (scrollPosition / 100) % 20; // Horizontal tilt
+        var tiltY = (scrollPosition / 100) % 15; // Vertical tilt
+        var translateY = scrollPosition / -2; // Vertical parallax effect
+        var scale = 1 + scrollPosition / 2000; // Slightly zoom in
+
+        document.getElementById('teaserImage').style.transform = `translateY(${translateY}px) rotateX(${tiltY}deg) rotateY(${tiltX}deg) scale(${scale})`;
+        document.getElementById('teaserImage').style.opacity = 1 - scrollPosition / 1000; // Keep some fade for smooth transition
+        document.getElementById('teaserImage').style.transition = 'transform 0.1s ease-out'; // Smooth animation
+    });
+
+    
+});
