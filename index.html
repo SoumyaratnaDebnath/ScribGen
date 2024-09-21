@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -54,7 +54,7 @@
         
         <section>
             <h2>Contributions</h2>
-            <div class="d-flex justify-content-center" style="margin-top: 20px; margin-bottom: 20px;">
+            <div class="d-flex justify-content-center" style="margin-top: 0px; margin-bottom: 10px;">
                 <img src="Files\Contributions.png" alt="Contributions" style="width: 85%;">
             </div>
         </section>
@@ -62,20 +62,8 @@
         <section>
             <h2>ScribGen in Action</h2>
             <div class="container">
-                <div class="row"  style="padding-top: 10px; position: sticky; top: 0px; background-color: rgb(255, 255, 255); z-index: 1000; height: 60px;">
-                    <!-- <div class="col-md-8"></div> -->
-                    <div class="col-md-4 generationLabel">
-                        Use the Slider to Interact 
-                    </div>
-                    <div class="col-md-5 generationLabel">
-                        <input type="range" id="imageSlider" min="1" max="40" value="40" oninput="updateImages(this.value)" style="width: 100%;">
-                    </div>
-                    <div class="col-md-3 generationLabel">
-                        <label for="imageSlider">Generation : <b><span id="imageSliderValue">2000</span></b></label>
-                    </div>
-                </div>
-
-                <div class="row" style="position: sticky; top: 60px; background-color: rgba(255, 255, 255, 0); z-index: 1000;">
+                
+                <div class="row" style="position: sticky; top: 0px; background-color: rgba(255, 255, 255, 0); z-index: 1000;">
                     <div class="col-md-2 rowHeadding">Image</div>
                     <div class="col-md-2 rowHeadding">Scrib-GA</div>
                     <div class="col-md-2 rowHeadding">Scrib-DE</div>
@@ -105,6 +93,17 @@
                         <img id="1image6" src="GIF_Database/Panda/HHO_images/img (40).png" width="100%" class="scribImg">
                     </div>
                 </div>
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-md-4 generationLabel">
+                        Use the Slider to Interact 
+                    </div>
+                    <div class="col-md-5 generationLabel">
+                        <input type="range" id="imageSliderPanda" min="1" max="40" value="40" oninput="updateImagesPanda(this.value)" style="width: 100%;">
+                    </div>
+                    <div class="col-md-3 generationLabel">
+                        <label for="imageSliderPanda">Generation : <b><span id="imageSliderValuePanda">2000</span></b></label>
+                    </div>
+                </div>
 
                 <!-- Bird -->
                 <div class="row">
@@ -125,6 +124,17 @@
                     </div>
                     <div class="col-md-2 scribImgCol">
                         <img id="2image6" src="GIF_Database/Bird/HHO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-md-4 generationLabel">
+                        Use the Slider to Interact 
+                    </div>
+                    <div class="col-md-5 generationLabel">
+                        <input type="range" id="imageSliderBird" min="1" max="40" value="40" oninput="updateImagesBird(this.value)" style="width: 100%;">
+                    </div>
+                    <div class="col-md-3 generationLabel">
+                        <label for="imageSliderBird">Generation : <b><span id="imageSliderValueBird">2000</span></b></label>
                     </div>
                 </div>
 
@@ -149,9 +159,20 @@
                         <img id="3image6" src="GIF_Database/hand/HHO_images/img (40).png" width="100%" class="scribImg">
                     </div>
                 </div>
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-md-4 generationLabel">
+                        Use the Slider to Interact 
+                    </div>
+                    <div class="col-md-5 generationLabel">
+                        <input type="range" id="imageSliderHand" min="1" max="40" value="40" oninput="updateImagesHand(this.value)" style="width: 100%;">
+                    </div>
+                    <div class="col-md-3 generationLabel">
+                        <label for="imageSliderHand">Generation : <b><span id="imageSliderValueHand">2000</span></b></label>
+                    </div>
+                </div>
 
                 <!-- horse -->
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-2 scribImgCol">
                         <img id="4image1" src="GIF_Database/horse/image.png" alt="Image" width="100%" class="realImg">
                     </div>
@@ -170,7 +191,7 @@
                     <div class="col-md-2 scribImgCol">
                         <img id="4image6" src="GIF_Database/horse/HHO_images/img (40).png" width="100%" class="scribImg">
                     </div>
-                </div>
+                </div> -->
 
                 <!-- hut -->
                 <div class="row">
@@ -191,6 +212,17 @@
                     </div>
                     <div class="col-md-2 scribImgCol">
                         <img id="5image6" src="GIF_Database/hut/HHO_images/img (40).png" width="100%" class="scribImg">
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-md-4 generationLabel">
+                        Use the Slider to Interact 
+                    </div>
+                    <div class="col-md-5 generationLabel">
+                        <input type="range" id="imageSliderHut" min="1" max="40" value="40" oninput="updateImagesHut(this.value)" style="width: 100%;">
+                    </div>
+                    <div class="col-md-3 generationLabel">
+                        <label for="imageSliderHut">Generation : <b><span id="imageSliderValueHut">2000</span></b></label>
                     </div>
                 </div>
 
@@ -215,9 +247,20 @@
                         <img id="6image6" src="GIF_Database/rose/HHO_images/img (40).png" width="100%" class="scribImg">
                     </div>
                 </div>
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-md-4 generationLabel">
+                        Use the Slider to Interact 
+                    </div>
+                    <div class="col-md-5 generationLabel">
+                        <input type="range" id="imageSliderRose" min="1" max="40" value="40" oninput="updateImagesRose(this.value)" style="width: 100%;">
+                    </div>
+                    <div class="col-md-3 generationLabel">
+                        <label for="imageSliderRose">Generation : <b><span id="imageSliderValueRose">2000</span></b></label>
+                    </div>
+                </div>
 
                 <!-- Landscape -->
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-2 scribImgCol">
                         <img id="7image1" src="GIF_Database/Landscape/image.png" alt="Image" width="100%" class="realImg">
                     </div>
@@ -236,10 +279,10 @@
                     <div class="col-md-2 scribImgCol">
                         <img id="7image6" src="GIF_Database/Landscape/HHO_images/img (40).png" width="100%" class="scribImg">
                     </div>
-                </div>
+                </div> -->
 
                 <!-- statue -->
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-2 scribImgCol">
                         <img id="8image1" src="GIF_Database/statue/image.png" alt="Image" width="100%" class="realImg">
                     </div>
@@ -258,7 +301,7 @@
                     <div class="col-md-2 scribImgCol">
                         <img id="8image6" src="GIF_Database/statue/HHO_images/img (40).png" width="100%" class="scribImg">
                     </div>
-                </div>
+                </div> -->
 
             </div>
             
