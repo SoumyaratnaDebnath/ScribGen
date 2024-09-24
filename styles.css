@@ -319,13 +319,20 @@ p {
   }
   
   /* Assign distinct colors for visualization */
-  div.item:nth-of-type(1) { --offset: 1; background-color: #90f1ef; }
+  /* div.item:nth-of-type(1) { --offset: 1; background-color: #90f1ef; }
   div.item:nth-of-type(2) { --offset: 2; background-color: #ff70a6; }
   div.item:nth-of-type(3) { --offset: 3; background-color: #ff9770; }
   div.item:nth-of-type(4) { --offset: 4; background-color: #ffd670; }
   div.item:nth-of-type(5) { --offset: 5; background-color: #e9ff70; }
   div.item:nth-of-type(6) { --offset: 6; background-color: #aff8db; }
-  div.item:nth-of-type(7) { --offset: 7; background-color: #b28dff; }
+  div.item:nth-of-type(7) { --offset: 7; background-color: #b28dff; } */
+  div.item:nth-of-type(1) { --offset: 1; background-color: white; border: 1px solid #000000; }
+  div.item:nth-of-type(2) { --offset: 2; background-color: white; border: 1px solid #000000; }
+  div.item:nth-of-type(3) { --offset: 3; background-color: white; border: 1px solid #000000; }
+  div.item:nth-of-type(4) { --offset: 4; background-color: white; border: 1px solid #000000; }
+  div.item:nth-of-type(5) { --offset: 5; background-color: white; border: 1px solid #000000; }
+  div.item:nth-of-type(6) { --offset: 6; background-color: white; border: 1px solid #000000; }
+  div.item:nth-of-type(7) { --offset: 7; background-color: white; border: 1px solid #000000; }
   
   /* Radio buttons for navigation */
   input[type="radio"] {
