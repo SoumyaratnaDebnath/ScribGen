@@ -52,11 +52,15 @@ body {
     
     color: #242424; 
 
-    font-family: "Alex Brush", cursive;
+    /* font-family: "Alex Brush", cursive;
     font-weight: 400;
     font-style: normal;
-    font-size: 60px;
+    font-size: 60px; */
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-size: 40px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 /* Footer styles */
@@ -129,7 +133,12 @@ p {
     left: 0;
 }
 
-
+.abstract{
+    padding-left: 100px; padding-right: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+}
 
 
 
@@ -262,3 +271,73 @@ p {
 
 }
 
+
+/* ////////////////////////////////// carousel */
+.crrBody {
+    /* width: 100px; /* Use full viewport height */
+    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr auto; /* Make the main content flexible and the control area fixed */
+    grid-template-columns: repeat(9, 1fr); /* Nine columns for centering */
+    align-items: center;
+    justify-items: center; 
+  }
+  
+  main#carousel {
+    grid-row: 1 / 2;
+    grid-column: 1 / 10; /* Extend across all columns for full width */
+    width: 50vw;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 200px;
+    --position: 1; /* Default position */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30px;
+  }
+  
+  div.item {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: coral; /* Default color, overridden by nth-of-type */
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+    transition: all 0.25s linear;
+    transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r)));
+    z-index: calc(7 - var(--abs)); /* Update based on total number of cards */
+    padding: 50px;
+    text-align: center;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Assign distinct colors for visualization */
+  div.item:nth-of-type(1) { --offset: 1; background-color: #90f1ef; }
+  div.item:nth-of-type(2) { --offset: 2; background-color: #ff70a6; }
+  div.item:nth-of-type(3) { --offset: 3; background-color: #ff9770; }
+  div.item:nth-of-type(4) { --offset: 4; background-color: #ffd670; }
+  div.item:nth-of-type(5) { --offset: 5; background-color: #e9ff70; }
+  div.item:nth-of-type(6) { --offset: 6; background-color: #aff8db; }
+  div.item:nth-of-type(7) { --offset: 7; background-color: #b28dff; }
+  
+  /* Radio buttons for navigation */
+  input[type="radio"] {
+    grid-column: auto; /* Auto placement within the grid system */
+    margin: 0 4px; /* Margin for separation */
+  }
+  
+  input:nth-of-type(1):checked ~ main#carousel { --position: 1; }
+  input:nth-of-type(2):checked ~ main#carousel { --position: 2; }
+  input:nth-of-type(3):checked ~ main#carousel { --position: 3; }
+  input:nth-of-type(4):checked ~ main#carousel { --position: 4; }
+  input:nth-of-type(5):checked ~ main#carousel { --position: 5; }
+  input:nth-of-type(6):checked ~ main#carousel { --position: 6; }
+  input:nth-of-type(7):checked ~ main#carousel { --position: 7; }
+  

@@ -47,23 +47,45 @@
     <main class="content">
         <section>
             <h2>Abstract</h2>
-            <p>
+            <p class="abstract">
                 Scribble art, arising from chaos and randomness, remains one of the exceptionally attractive forms of art. Many works bridge the gap between sketches and images, but few translate images into meaningful chaotic expressions. While deep generative networks are known for understanding images, their ability to induce scribble drawings is under-explored. Unlike GAN-based approaches that generate line drawings, sketches, and contours, our work uses metaheuristics to produce scribble art from images. We extensively analyse various metaheuristic algorithms, demonstrating their optimal balance between creativity and computational efficiency. They offer better adaptability and accuracy than state-of-the-art deep generative models for image-to-scribble generation.    
             </p>
         </section>
         
         <section>
             <h2>Contributions</h2>
-            <div class="d-flex justify-content-center" style="margin-top: 0px; margin-bottom: 10px;">
+            <!-- <div class="d-flex justify-content-center" style="margin-top: 0px; margin-bottom: 10px;">
                 <img src="Files\Contributions.png" alt="Contributions" style="width: 85%;">
-            </div>
+            </div> -->
+            <div class="crrBody">
+                <div></div>
+                <input type="radio" name="position" checked />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <main id="carousel">
+                  <div class="item">A novel approach using metaheuristics to generate scribble art from images</div>
+                  <div class="item">Alternative to traditional GAN-based methods</div>
+                  <div class="item">No Need for Supervised Training</div>
+                  <div class="item">Analysis of various metaheuristic algorithm backbones for producing scribble art</div>
+                  <div class="item">Creates a balance between creativity and computation</div>
+                  <div class="item">Quantitively surpasses deep learning techniques in preserving visual similarity</div>
+                  <div class="item">Can serve as a data source for training deep learning models</div>
+                </main>
+              </div>
+              
+              
+                
         </section>
 
         <section>
-            <h2>ScribGen in Action</h2>
+            <h2 style="margin-top:-10px; position: sticky; top: 0px; background-color: rgba(255, 255, 255, 255); z-index: 1000; height: 60px; padding-top: 10px;">ScribGen in Action</h2>
             <div class="container">
                 
-                <div class="row" style="position: sticky; top: 0px; background-color: rgba(255, 255, 255, 0); z-index: 1000;">
+                <div class="row" style="position: sticky; top: 60px; background-color: rgba(255, 255, 255, 0); z-index: 1000;">
                     <div class="col-md-2 rowHeadding">Image</div>
                     <div class="col-md-2 rowHeadding">Scrib-GA</div>
                     <div class="col-md-2 rowHeadding">Scrib-DE</div>

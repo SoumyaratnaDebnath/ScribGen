@@ -105,5 +105,4 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('teaserImage').style.transition = 'transform 0.1s ease-out'; // Smooth animation
     });
 
-    
 });
